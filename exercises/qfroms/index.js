@@ -26,7 +26,9 @@ class Queue {
 
   remove(){
     if (this.stackOne.peek()){
-        this.stackTwo.push(this.stackOne.pop()) 
+        this.stackTwo.push(this.stackOne.pop())
+    }else if (this.stackTwo.peek()){
+      this.stackOne.push(this.stackTwo.pop())
     }
   }
   peek(){
