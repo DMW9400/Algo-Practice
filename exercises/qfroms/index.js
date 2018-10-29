@@ -32,7 +32,7 @@ class Queue {
     }
   }
   peek(){
-
+    return this.stackOne.peek()
   }
 }
 
