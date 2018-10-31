@@ -34,24 +34,24 @@ class Queue {
     while (this.stackTwo.peek()){
       this.stackOne.push(this.stackTwo.pop())
     }
-    
+
     return stackReturn
 
   }
   peek(){
-    return this.stackTwo.peek()
+    while (this.stackOne.peek()){
+      this.stackTwo.push(this.stackOne.pop())
     }
+
+    let stackReturn = this.stackTwo.peek()
+
+    while (this.stackTwo.peek()){
+      this.stackOne.push(this.stackTwo.pop())
+    }
+
+    return stackReturn
+  }
 }
-
-let qTest = new Queue()
-qTest.add(1)
-qTest.add(2)
-qTest.add(3)
-qTest.remove()
-
-// qTest.remove()
-// qTest.remove()
-console.log('stack one',qTest.stackOne,'stack two', qTest.stackTwo)
 
 
 module.exports = Queue;
