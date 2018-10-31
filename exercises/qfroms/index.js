@@ -25,15 +25,17 @@ class Queue {
   }
 
   remove(){
-    if (this.stackOne.peek()){
-        this.stackTwo.push(this.stackOne.pop())
-    } else if(this.stackTwo.peek()){
+    while (this.stackOne.peek()){
+      this.stackTwo.push(this.stackOne.pop())
+    }
+
+    let stackReturn = this.stackTwo.pop()
+
+    while (this.stackTwo.peek()){
       this.stackOne.push(this.stackTwo.pop())
     }
-    else {
-      return this.stackTwo.pop()
-    }
-    console.log(this.stackTwo.peek())
+    
+    return stackReturn
 
   }
   peek(){
