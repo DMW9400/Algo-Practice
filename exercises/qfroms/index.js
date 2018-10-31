@@ -27,19 +27,29 @@ class Queue {
   remove(){
     if (this.stackOne.peek()){
         this.stackTwo.push(this.stackOne.pop())
-    }else if (this.stackTwo.peek()){
+    } else if(this.stackTwo.peek()){
       this.stackOne.push(this.stackTwo.pop())
     }
+    else {
+      return this.stackTwo.pop()
+    }
+    console.log(this.stackTwo.peek())
+
   }
   peek(){
-    return this.stackOne.peek()
-  }
+    return this.stackTwo.peek()
+    }
 }
 
 let qTest = new Queue()
 qTest.add(1)
 qTest.add(2)
 qTest.add(3)
+qTest.remove()
+
+// qTest.remove()
+// qTest.remove()
+console.log('stack one',qTest.stackOne,'stack two', qTest.stackTwo)
 
 
 module.exports = Queue;
