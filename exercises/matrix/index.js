@@ -22,7 +22,6 @@ function matrix(n) {
     results.push([])
   }
 
-
   let counter = 1
   let startColumn = 0
   let startRow = 0
