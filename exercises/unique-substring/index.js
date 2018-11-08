@@ -23,9 +23,7 @@ function uniqString(string_arg){
         } else {
           subStr.push(uniqStr)
           uniqStr = ''
-          console.log('arr before:', uniqArr)
           uniqArr = []
-           console.log('arr after:', uniqArr)
         }
       }
     }
